@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div
+        class="hero-component"
+        data-title="Aprende Inglés con Nosotros y Abre Puertas a Nuevas Oportunidades"
+        data-subtitle="Cursos de Inglés Diseñados para Alcanzar Tus Metas."
+        data-bg-img="https://maltalovers.com/wp-content/uploads/2018/09/InLingua-1.jpg"
+        data-main-btn-text="Ver Cursos"
+        data-main-btn-link="#cursos"
+        data-secondary-btn-text="Solicita Presupuesto"
+        data-secondary-btn-link="#reservar"
+></div>
+<div class="group-prices-component" data-ids="1,2,3,4,5,3,6,7,8" data-lang="es-es" data-url="https://admin.maltalovers.com" data-tab-titles="Cursos Presenciales,Cursos Online,Gateway" data-btn-msg="Ver más"></div>
+<div id="modal-test" class="modal-component" style="display: none;" data-open="false">
+    <div class="title">Reserva tu curso</div>
+    <div class="description">[contact-form-7 html_id="multiStep" id="c9405d7" title="2025 - ES - Nombre - Apellido - Email - Telefono" html_class="mx-auto px-3 max-w-500"]</div>
+</div>
+<div class="advantages-component"
+     data-title="Nuestros Cursos de inglés"
+     data-subtitle="Ofrecemos diferentes cursos de inglés según las necesidades pero también ofrecemos diferentes modalidades a tiempo parcial y online.">
+    <div
+            class="advantage"
+            data-icon="Users"
+            data-title="Cursos de inglés especializados"
+            data-description="Tenemos diferentes tipos de cursos para adultos (mayores de 30 o 50 años), profesionales, academicos (Cambridge, IELST), programas de niños y otros."
+    >
+    </div>
+    <div
+            class="advantage"
+            data-icon="Moon"
+            data-title="Cursos de inglés a tiempo parcial"
+            data-description="Ofrecemos cursos en las noches, sábados, 3 veces a la semana o incluso 2 veces (dependiendo del nivel y disponibilidad)">
+    </div>
+    <div class="advantage"
+         data-icon="MonitorPlay"
+         data-title="Cursos de inglés online"
+         data-description="También ofrecemos cursos de inglés de manera en línea, para aquellos que prefieren modalidades online">
+    </div>
+</div>
+<div class="course-types-component" data-title="Nuestros cursos de inglés"
+     data-description="Explora nuestros diferentes cursos y encuentra el adecuado para ti."
+     data-price-label="Desde"
+     data-currency-symbol="€"
+     data-per-duration-label="semana"
+     data-reviews-text="revieses"
+>
+    <div class="course" data-title="Inglés General" data-rating="9.5" data-reviews="214" data-price-per-week="95"
+         data-description="Aprende inglés sin prisa pero sin pausa mientras disfrutas al máximo de Malta.">
+        <div class="feature" data-icon="Clock" data-text="20 clases de 45 min por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges el número de semanas"></div>
+        <div class="feature" data-icon="Users" data-text="15 estudiantes máximo por clase"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="Desde 16 a 99 años"></div>
+    </div>
+    <div class="course" data-title="Inglés Intensivo" data-rating="9.2" data-reviews="217" data-price-per-week="189"
+         data-description="Para los que quieren aprender más rápido, combina clases exclusivas de Speaking con tu curso de Inglés General.">
+        <div class="feature" data-icon="Clock" data-text="30 clases de 45 min por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges el número de semanas"></div>
+        <div class="feature" data-icon="Users" data-text="15 estudiantes máximo por clase"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="Desde 16 a 99 años"></div>
+    </div>
+
+    <div class="course" data-title="Inglés +30 años" data-rating="9.5" data-reviews="178" data-price-per-week="180"
+         data-description="Para los que quieren estudiar con personas de una edad similar.">
+        <div class="feature" data-icon="Clock" data-text="20 o 30 clases por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges la duración"></div>
+        <div class="feature" data-icon="Users" data-text="Máximo 15 estudiantes por clase"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="Desde 30 años en adelante"></div>
+    </div>
+
+    <div class="course" data-title="Inglés de Negocios" data-rating="9.2" data-reviews="183" data-price-per-week="190"
+         data-description="Para los que buscan darle un empujón a su carrera profesional y abrirse a oportunidades laborales en todo el mundo.">
+        <div class="feature" data-icon="Clock" data-text="10, 20 o 30 clases por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges la duración"></div>
+        <div class="feature" data-icon="Users" data-text="Grupos reducidos"></div>
+        <div class="feature" data-icon="LineChart" data-text="Nivel B1 en adelante"></div>
+        <div class="feature" data-icon="User" data-text="A partir de 18 años"></div>
+    </div>
+
+    <div class="course" data-title="Inglés Nocturno" data-rating="9.7" data-reviews="188" data-price-per-week="75"
+         data-description="Dedica tus días a explorar Malta y las noches a mejorar tu inglés.">
+        <div class="feature" data-icon="Clock" data-text="10 o 20 clases por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges la duración"></div>
+        <div class="feature" data-icon="Users" data-text="20 estudiantes por clase"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="Desde 18 a 99 años"></div>
+    </div>
+
+    <div class="course" data-title="Inglés en Familia" data-rating="9.9" data-reviews="214" data-price-per-week="125"
+         data-description="Aprende inglés con tus personas favoritas como compañeros de clase.">
+        <div class="feature" data-icon="Clock" data-text="20 clases por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="Tú eliges la duración"></div>
+        <div class="feature" data-icon="Users" data-text="Grupos reducidos para los peques"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="De 5 años a 99 años"></div>
+    </div>
+
+    <div class="course" data-title="Inglés para Adolescentes" data-rating="9.4" data-reviews="217"
+         data-price-per-week="375"
+         data-description="Una experiencia completa que incluye inglés, alojamiento y actividades cada día.">
+        <div class="feature" data-icon="Clock" data-text="20 clases por semana"></div>
+        <div class="feature" data-icon="Calendar" data-text="De 1 a 8 semanas"></div>
+        <div class="feature" data-icon="Users" data-text="20 estudiantes por clase"></div>
+        <div class="feature" data-icon="LineChart" data-text="Para todos los niveles"></div>
+        <div class="feature" data-icon="User" data-text="Desde 12 a 17 años"></div>
+    </div>
+</div>
+<div class="services-component"
+     data-title="¿Qué hacemos por ti?"
+     data-description="Tu familia en el extranjero"
+     data-show-btn="Ver más"
+     data-hide-btn="Ocultar"
+     data-features-btn="Que incluye:"
+>
+    <div class="service"
+         data-title="Visa de Turista para Malta"
+         data-short-description="Si tu plan es pasar unos días increíbles descubriendo la isla, la visa de turista es tu opción ideal. Te ayudamos con los requisitos y documentación para que puedas disfrutar de tu visita a Malta sin complicaciones."
+         data-features="Asesoramiento para la visa de turista, Guía de requisitos para ciudadanos de diferentes países, Ayuda con la documentación necesaria, Asesoría en el proceso de solicitud de visa">
+    </div>
+
+    <div class="service"
+         data-title="Visa de Estudiante para Malta"
+         data-short-description="Estudiar en Malta es una experiencia única. Te asistimos con el proceso de solicitud para la visa de estudiante, desde la inscripción en una escuela hasta la tramitación de tu visa."
+         data-features="Asesoramiento sobre la visa de estudiante, Ayuda para encontrar cursos de inglés o formación profesional, Guía de requisitos para aplicar desde tu país, Asesoría en el proceso de solicitud y documentos necesarios">
+    </div>
+
+    <div class="service"
+         data-title="Visa de Nómada Digital para Malta"
+         data-short-description="Si eres trabajador remoto y buscas un lugar para vivir y trabajar legalmente, la visa de nómada digital es la opción ideal. Te ayudamos a entender los requisitos y a gestionar la documentación para residir en Malta."
+         data-features="Asesoramiento sobre la visa de nómada digital, Guía para cumplir con los requisitos financieros, Asesoría sobre trabajo remoto y actividades comerciales, Asistencia para aplicar y gestionar los trámites necesarios">
+    </div>
+
+    <div class="service"
+         data-title="Visa de Trabajo para Malta"
+         data-short-description="Malta tiene muchas oportunidades laborales. Te ayudamos a solicitar el visado de trabajo, para que puedas establecerte y trabajar en el país con todos los permisos necesarios."
+         data-features="Asesoramiento sobre la visa de trabajo, Guía para solicitar el permiso de trabajo y la residencia, Asistencia con la búsqueda de empleo y oferta laboral en Malta, Ayuda con la documentación necesaria para aplicar">
+    </div>
+</div>
+<div class="testimonials-component" data-title="Testimonios" data-description="Lo que dicen nuestros estudiantes de sus procesos de visado">
+    <div class="testimonial" data-name="Marianna Melendez, Colombia" data-from="ACE English Malta"
+         data-image="https://www.aceenglishmalta.com/wp-content/uploads/bb-plugin/cache/Marianna-ACE-English-Malta-300x300-150x150-circle.jpg"
+         data-text="Mi experiencia como estudiante en ACE English Malta ha sido increíble porque conocí a personas de diferentes países. Además, la escuela tiene muchas actividades que me ayudaron a mejorar mi inglés, como clases de conversación gratuitas, películas por la tarde o clubes sociales. También, la maravillosa vida en Malta, con sus espectaculares vistas y playas pintorescas, hace que tu aventura sea fuera de este mundo."
+         data-rating="5"></div>
+       <div class="testimonial" data-name="Sonia Arbelaez, España" data-from="ACE English Malta"
+            data-image="https://scontent.fmla3-1.fna.fbcdn.net/v/t1.6435-9/204242138_10159501885934813_737119046756075599_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=IOQ87jn8SLoQ7kNvgEz2iNd&_nc_zt=23&_nc_ht=scontent.fmla3-1.fna&_nc_gid=AOIBF3b03jOBcZJJ2Iqgt_Q&oh=00_AYCbuunWyCjQqyEggMB94lWcdZ7bnisjVkwWAzB9o1YATw&oe=67C35568"
+            data-text="Excelente servicio y asesoría en todo momento, muy profesionales y dispuestos a ajustar la experiencia a tu presupuesto, contrate con ellos estancia y curso de ingles, el apartamento bien ubicado y cerca a la Escuela. El curso se adecua a tu nivel previo y la escuela es muy buena. Además me orientaron frente a destinos turísticos, rutas y actividades a desarrollar durante mi estancia. Estoy muy agradecida con ellos y los recomiendo al 100%."
+            data-rating="5"></div>
+       <div class="testimonial" data-name="Alejandra Pérez, Venezuela" data-from="Inlingua"
+            data-image="https://maltalovers.com/wp-content/uploads/2020/11/825950bc-a88a-439b-ba85-2d3474f271dc.jpg"
+            data-text="Estudiar inglés en Malta fue maravilloso. Logré aprender el idioma y disfrutar de muchas culturas diferentes. Si tuviera que volver a Malta, lo haría de nuevo con Maltalovers. Gracias chicos por estar ahí para mi."
+            data-rating="5"></div>
+</div>
+<div class="faq-component" data-title="Visados en Malta" data-description="Preguntas frecuentes sobre los visados para Malta">
+    <div class="faq-item" data-question="¿Necesito un visado para estudiar en Malta?"
+         data-answer="Dependiendo de tu nacionalidad, es posible que necesites un visado para estudiar en Malta. Los ciudadanos de la UE/EEE no requieren visado, pero los estudiantes de fuera de la UE deben solicitar un visado de estudiante para poder residir y estudiar en Malta durante más de 90 días."></div>
+    <div class="faq-item" data-question="¿Cómo puedo solicitar un visado de estudiante para Malta?"
+         data-answer="Para solicitar un visado de estudiante, necesitarás presentar una carta de aceptación de una institución educativa acreditada, prueba de fondos suficientes para tu estancia, prueba de alojamiento, un seguro médico y otros documentos que puedan ser requeridos por la embajada o consulado de Malta en tu país."></div>
+    <div class="faq-item" data-question="¿Cuánto tiempo tarda en procesarse el visado?"
+         data-answer="El proceso de solicitud de visado puede tardar entre 4 y 6 semanas. Es recomendable que inicies la solicitud con antelación para evitar retrasos, especialmente si tienes que presentar documentos adicionales o si estás solicitando visados durante la temporada alta."></div>
+    <div class="faq-item" data-question="¿Qué tipo de visado necesito si solo estudio por 3 meses o menos?"
+         data-answer="Si planeas estudiar en Malta por 3 meses o menos, no necesitarás un visado si eres ciudadano de la UE/EEE. Sin embargo, si eres ciudadano de un país fuera de la UE, generalmente no necesitarás un visado para estancias de corta duración, pero debes asegurarte de que tu estancia no exceda los 90 días permitidos."></div>
+    <div class="faq-item" data-question="¿Puedo trabajar mientras estudio en Malta?"
+         data-answer="Si eres estudiante de fuera de la UE con un visado de estudiante, puedes trabajar a medio tiempo durante tu estancia en Malta. El límite es de 20 horas por semana durante el período lectivo y hasta 40 horas por semana durante las vacaciones. Asegúrate de que tu visado te permita trabajar antes de aceptar un empleo."></div>
+    <div class="faq-item" data-question="¿Necesito un seguro médico para obtener el visado?"
+         data-answer="Sí, uno de los requisitos para obtener un visado de estudiante en Malta es tener un seguro médico que cubra toda tu estancia. El seguro debe ser válido para el tratamiento médico en Malta y cubrir emergencias médicas, repatriación, entre otros aspectos."></div>
+    <div class="faq-item" data-question="¿Qué debo hacer cuando llegue a Malta con un visado de estudiante?"
+         data-answer="Cuando llegues a Malta, debes registrarte en el Departamento de Inmigración y obtener un permiso de residencia temporal si tu estancia es superior a 90 días. Esto debe hacerse dentro de los primeros 90 días desde tu llegada al país."></div>
+</div>
+<div class="chatbot-component"></div>
+<script type="module" src="../srcsrc/main.tsx"></script>
+</body>
+</html>

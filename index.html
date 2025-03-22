@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="navbar-component" data-logo="logo.png" data-button-text="Post a Job" data-button-url="/post-job">
+    <div class="navbar-link" data-text="Jobs" data-url="/"></div>
+    <div class="navbar-link" data-text="Companies" data-url="/companies"></div>
+    <div class="navbar-link" data-text="About" data-url="/about"></div>
+</div>
+<div class="banner-component" data-position="top" data-url="https://video-previews.elements.envatousercontent.com/h264-video-previews/e08912ad-6856-4e36-89b5-cf1465cc79cb/32651312.mp4" data-link="https://example.com" data-alt="Top Banner"></div>
+<div class="listing-component"
+     data-api-url="http://localhost:5000/api/jobs"
+     data-filters="company,country,city"
+     data-items-per-page="10"
+     data-enable-search="true"
+     data-enable-pagination="true"
+     data-banner-sidebar="true"
+     data-banner-sidebar-url="https://video-previews.elements.envatousercontent.com/h264-video-previews/ad7840fb-fbe5-4dce-b733-198512e6ba15/36457156.mp4"
+     data-banner-sidebar-link="https://example.com"
+     data-card-type="job">
+</div>
+<div class="banner-component" data-position="bottom" data-url="https://video-previews.elements.envatousercontent.com/h264-video-previews/e08912ad-6856-4e36-89b5-cf1465cc79cb/32651312.mp4" data-link="https://example.com" data-alt="Top Banner"></div>
+<div class="footer-component" data-title="Subscribe to our newsletter" data-description="The latest job and career tips, weekly in your inbox.">
+    <div class="footer-section">
+        <div class="footer-link" data-text="Solutions"></div>
+        <div class="footer-link" data-text="Job Search" data-url="/jobs"></div>
+        <div class="footer-link" data-text="Resume Builder" data-url="/resume"></div>
+        <div class="footer-link" data-text="Career Advice" data-url="/advice"></div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-link" data-text="Support"></div>
+        <div class="footer-link" data-text="Pricing" data-url="/pricing"></div>
+        <div class="footer-link" data-text="Documentation" data-url="/docs"></div>
+        <div class="footer-link" data-text="Guides" data-url="/guides"></div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-link" data-text="Company"></div>
+        <div class="footer-link" data-text="About" data-url="/about"></div>
+        <div class="footer-link" data-text="Blog" data-url="/blog"></div>
+        <div class="footer-link" data-text="Press" data-url="/press"></div>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-link" data-text="Legal"></div>
+        <div class="footer-link" data-text="Privacy" data-url="/privacy"></div>
+        <div class="footer-link" data-text="Terms" data-url="/terms"></div>
+    </div>
+
+</div>
+
+
+<script type="module" src="src/main.tsx"></script>
+</body>
+</html>

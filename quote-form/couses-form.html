@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Course Price Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- Course Type -->
+        <h2>¿Qué tipo de curso estás buscando?*</h2>
+        <div class="course-type">
+            <label>
+                <input type="radio" name="course" value="general" checked>
+                Inglés General <span class="tooltip">?</span>
+            </label>
+            <label>
+                <input type="radio" name="course" value="intensive">
+                Inglés Intensivo <span class="tooltip">?</span>
+            </label>
+        </div>
+
+        <!-- Weeks Selector -->
+        <h2>¿Cuántas semanas te gustaría estudiar?*</h2>
+        <div class="weeks-slider">
+            <input type="range" id="weeks" min="1" max="52" value="24">
+            <span id="weeks-value">24 semanas</span>
+        </div>
+
+        <!-- Price Table -->
+        <h2>Comparación de precios</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-column="academy">Academia</th>
+              <th class="sortable" data-column="basePrice">Precio Base</th>
+              <th class="sortable" data-column="offerPrice">Oferta</th>
+              <th class="sortable" data-column="extras">Extras</th>
+              <th data-column="condition">Condiciones</th>
+            </tr>
+          </thead>
+          <tbody id="price-body"></tbody>
+        </table>
+
+        <!-- Custom Quote -->
+        <div class="quote-form">
+            <h2>Recibe una cotización personalizada</h2>
+            <label>¿Cómo te llamas?*<input type="text" placeholder="Tu nombre"></label>
+            <label>Tu mejor email*<input type="email" placeholder="Tu mejor email"></label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

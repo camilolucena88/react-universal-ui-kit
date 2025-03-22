@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Video Load on Hover</title>
+    <style>
+        .video-container {
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease-in-out;
+        }
+        .play-button, .fullscreen-button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+        .fullscreen-button {
+            left: 70%;
+        }
+        .play-button:hover, .fullscreen-button:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; padding: 20px;">
+    <div style="max-width: 600px; text-align: left;">
+        <h2>Curso de Inglés general 20/30 lecciones por semana</h2>
+        <h3 style="color: red;">A poca distancia caminando de la escuela</h3>
+        <p><strong><a href="#" style="text-decoration: underline; color: gray;">Inglés general 20/30 lecciones por semana</a></strong></p>
+        <p style="text-align: justify; color: #555;">
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+            Estos cursos son especialmente adecuados para estudiantes de todos los niveles que desean un buen nivel de inglés en una amplia variedad de áreas de idiomas. Además de la gramática, el vocabulario, la lectura y la escritura, el objetivo principal de nuestros cursos generales de inglés es ayudar a los estudiantes a comunicarse bien en situaciones cotidianas, tanto en un entorno de inglés como en un idioma no nativo. Los materiales actualizados utilizados en el curso fueron desarrollados internamente por maestros experimentados para que el curso sea informativo, divertido y desafiante. Este curso consta de 20 o 30 lecciones por semana, lo que significa 15 horas por semana en el curso de inglés general y 22.5 horas por semana en el curso intensivo de inglés general.
+        </p>
+    </div>
+
+    <div class="video-container" id="videoContainer" style="position: relative; width: 600px; height: 300px; overflow: hidden; cursor: pointer; border-radius: 10px;">
+        <img id="placeholder" class="placeholder" src="https://images.pexels.com/videos/7092223/pexels-photo-7092223.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Video Placeholder" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 0.3s ease-in-out;">
+        <video id="hoverVideo" muted loop preload="none">
+            <source src="https://videos.pexels.com/video-files/7092223/7092223-sd_640_360_30fps.mp4" type="video/mp4">
+            <track src="subtitles.vtt" kind="subtitles" srclang="es" label="Español" default>
+        </video>
+        <button class="fullscreen-button" id="fullscreenButton">⛶ Fullscreen</button>
+        <button class="play-button" id="playButton" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 14px; color: white; background: rgba(0, 0, 0, 0.7); padding: 6px 10px; border: none; cursor: pointer; display: none; border-radius: 5px;">▶ Play</button>
+    </div>
+</div>
+
+<script>
+    const videoContainer = document.getElementById("videoContainer");
+    const video = document.getElementById("hoverVideo");
+    const placeholder = document.getElementById("placeholder");
+    const playButton = document.getElementById("playButton");
+    const fullscreenButton = document.getElementById("fullscreenButton");
+
+    let videoLoaded = false;
+
+    // Show video when it's ready
+    video.addEventListener("mouseenter", () => {
+        if (!videoLoaded) {
+            videoLoaded = true;
+            video.style.opacity = "1";
+            placeholder.style.opacity = "0";
+            playButton.style.display = "block"; // Show play button when ready
+            video.play();
+        }
+    });
+
+    // Play/Pause toggle
+    playButton.addEventListener("click", () => {
+        if (video.paused) {
+            video.play();
+            playButton.textContent = "⏸ Pause";
+        } else {
+            video.pause();
+            playButton.textContent = "▶ Play";
+        }
+    });
+
+    // Fullscreen toggle
+    fullscreenButton.addEventListener("click", () => {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "courseType": "Inglés Intensivo",
+  "pricingData": [
+    {
+      "academy": "ACE",
+      "basePrice": 4800,
+      "discounts": [
+        { "duration": 12, "discount": 0.90 },
+        { "duration": 24, "discount": 0.70 }
+      ],
+      "extras": 115,
+      "condition": "50€ registro + 40€ libro intensivo."
+    },
+    {
+      "academy": "EC",
+      "basePrice": 6200,
+      "discounts": [
+        { "duration": 8, "discount": 0.95 },
+        { "duration": 24, "discount": 0.85 }
+      ],
+      "extras": 115,
+      "condition": "60€ registro + Materiales según semanas."
+    },
+    {
+      "academy": "Gateway",
+      "basePrice": 2600,
+      "discounts": [
+        { "duration": 8, "discount": 0.98 }
+      ],
+      "extras": 115,
+      "condition": "45€ primer libro, horarios intensivos."
+    },
+    {
+      "academy": "AM",
+      "basePrice": 6000,
+      "discounts": [
+        { "duration": 12, "discount": 0.88 }
+      ],
+      "extras": 115,
+      "condition": "Incluye material intensivo inicial."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "courseType": "Inglés General",
+  "pricingData": [
+    {
+      "academy": "ACE",
+      "basePrice": 280,
+      "discounts": [
+        { "duration": 8, "discount": 0.95 },
+        { "duration": 24, "discount": 0.75 }
+      ],
+      "extras": 115,
+      "condition": "45€ registro + 35€ libro escuela."
+    },
+    {
+      "academy": "EC",
+      "basePrice": 200,
+      "discounts": [
+        { "duration": 12, "discount": 0.90 },
+        { "duration": 24, "discount": 0.80 }
+      ],
+      "extras": 115,
+      "condition": "55€ registro + Materiales según semanas."
+    },
+    {
+      "academy": "English Path",
+      "basePrice": 200,
+      "discounts": [
+        { "duration": 24, "discount": 0.85 }
+      ],
+      "extras": 115,
+      "condition": "Materiales adicionales según semanas."
+    },
+    {
+      "academy": "Gateway",
+      "basePrice": 260,
+      "discounts": [
+        { "duration": 8, "discount": 0.98 },
+        { "duration": 12, "discount": 0.92 }
+      ],
+      "extras": 115,
+      "condition": "35€ primer libro, horarios rotativos."
+    },
+    {
+      "academy": "AM",
+      "basePrice": 300,
+      "discounts": [
+        { "duration": 8, "discount": 0.94 },
+        { "duration": 24, "discount": 0.80 }
+      ],
+      "extras": 115,
+      "condition": "Primer libro incluido, otros libros 40€."
+    }
+  ]
+}
