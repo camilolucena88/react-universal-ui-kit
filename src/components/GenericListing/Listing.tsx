@@ -11,6 +11,7 @@ import SidebarFilter, {type JobFilters} from "./SidebarFilter"
 import MobileNav from "./MobileNav"
 import {BookmarkIcon, GridIcon, ListIcon, SlidersHorizontal, Search, XCircle} from "lucide-react"
 import "./styles/itemListing.css"
+import {Job} from "@components/JobListing/types/Job";
 
 interface BannerConfig {
     enabled: boolean
@@ -523,8 +524,6 @@ const Listing: React.FC<ListingProps> = ({
 
     const handleSaveJob = (job: Job) => {
         const jobId = job.id | job._id || job.slug || job.link
-
-        console.log(jobId)
 
         setSavedJobs((prev) => {
             const isCurrentlySaved = prev.includes(jobId)

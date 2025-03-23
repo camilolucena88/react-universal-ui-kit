@@ -22,7 +22,6 @@ import FAQ from "./components/HomePage/FAQ";
 import Chatbot from "./components/HomePage/Chatbot";
 import Services from "./components/HomePage/Services";
 import CourseTypes from "./components/HomePage/CourseTypes";
-import JobListings from "./components/JobListing/JobListing";
 import Footer from "./components/JobListing/components/Footer";
 import Navbar from './components/JobListing/components/Navbar';
 import Banner from "./components/JobListing/components/Banner";
@@ -69,8 +68,8 @@ elements.forEach((element) => {
 const groupPrices = document.querySelectorAll('.group-prices-component');
 groupPrices.forEach((groupPrice) => {
   const dataIds = groupPrice.getAttribute("data-ids")?.split(",") || [];
-  const lang = groupPrice.getAttribute('data-lang');
-  const tabTitle = groupPrice.getAttribute('data-title');
+  const lang = groupPrice.getAttribute("data-lang") ?? "en";
+  const tabTitle = groupPrice.getAttribute('data-title') ?? "";
   const url = groupPrice.getAttribute('data-url') || window.location.origin || "http://localhost:8000";
   const buttonMsg = groupPrice.getAttribute('data-btn-msg') || "Learn More";
   const tabTitles = groupPrice.getAttribute('data-tab-titles')?.split(',') || ["Main Tab", "Secondary Tab"];
@@ -151,17 +150,17 @@ heroElements.forEach((element) => {
 
 const coursesElement = document.querySelector(".courses-component");
 if (coursesElement) {
-  const title = coursesElement.getAttribute("data-title");
-  const description = coursesElement.getAttribute("data-description");
+  const title = coursesElement.getAttribute("data-title") ?? "";
+  const description = coursesElement.getAttribute("data-description")?? "";
   const courses = Array.from(
       coursesElement.querySelectorAll(".course")
   ).map((element) => {
-    const id = element.getAttribute("data-id");
-    const title = element.getAttribute("data-title");
-    const type = element.getAttribute("data-type");
-    const duration = element.getAttribute("data-duration");
-    const level = element.getAttribute("data-level");
-    const description = element.getAttribute("data-description");
+    const id = element.getAttribute("data-id") ?? "1";
+    const title = element.getAttribute("data-title") ?? "";
+    const type = element.getAttribute("data-type") ?? "";
+    const duration = element.getAttribute("data-duration") ?? "";
+    const level = element.getAttribute("data-level") ?? "";
+    const description = element.getAttribute("data-description") ?? "";
     const price = parseFloat(element.getAttribute("data-price") ?? "0");
 
     return {id, title, type, duration, level, description, price};
@@ -348,35 +347,6 @@ function renderComponent(
   }
 }
 
-
-renderMultiple(".component-job-listing", JobListings, (el: Element) => ({
-  apiUrl: el.getAttribute("data-api-url") || "http://localhost:5000/api",
-  itemsPerPage: parseInt(el.getAttribute("data-items-per-page") ?? "12", 10),
-  filterKeys: el.getAttribute("data-filters")?.split(",") ?? ["company", "city", "company_type", "country", "department"],
-  enableSearch: el.getAttribute("data-enable-search") === "true",
-  enablePagination: el.getAttribute("data-enable-pagination") === "true",
-  enableMobileFilter: el.getAttribute("data-enable-mobile-filter") === "true",
-  banners: {
-    top: {
-      enabled: el.getAttribute("data-banner-top") === "true",
-      url: el.getAttribute("data-banner-top-url"),
-      alt: el.getAttribute("data-banner-top-alt") || "Job Listing Banner",
-      link: el.getAttribute("data-banner-top-link"),
-    },
-    bottom: {
-      enabled: el.getAttribute("data-banner-bottom") === "true",
-      url: el.getAttribute("data-banner-bottom-url"),
-      alt: el.getAttribute("data-banner-bottom-alt") || "Job Listing Banner",
-      link: el.getAttribute("data-banner-bottom-link"),
-    },
-    sidebar: {
-      enabled: el.getAttribute("data-banner-sidebar") === "true",
-      url: el.getAttribute("data-banner-sidebar-url"),
-      alt: el.getAttribute("data-banner-sidebar-alt") || "Job Listing Sidebar Banner",
-      link: el.getAttribute("data-banner-sidebar-link"),
-    },
-  }
-}));
 
 renderMultiple(".footer-component", Footer, (el: Element) => {
   return {

@@ -3,17 +3,17 @@ import { Clock, Users, Signal, ShoppingCart } from 'lucide-react';
 import { useCart } from './context/CartContext';
 
 interface Course {
-  id: number;
+  id: string | number;  // Allow both string and number
   title: string;
-  rating: number;
-  reviews: number;
-  price?: number;
-  level?: string;
-  type?: string;
-  pricePerWeek: number;
+  type: string;
+  duration: string;
+  level: string;
   description: string;
-  duration: number
-  features: { icon: string; text: string }[];
+  price: number;
+  rating?: number;   // ✅ Optional
+  reviews?: number;  // ✅ Optional
+  pricePerWeek?: number; // ✅ Optional
+  features?: { icon: string; text: string }[]; // ✅ Optional
   ctaLink?: string;
   ctaText?: string;
 }

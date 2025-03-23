@@ -333,7 +333,7 @@ const destinations = [
 
 const courses = [
   {
-    id: '1',
+    id: 1,
     title: 'Intensive English',
     type: 'in-person',
     duration: '4-12 weeks',
@@ -342,7 +342,7 @@ const courses = [
     price: 1299
   },
   {
-    id: '2',
+    id: 2,
     title: 'Business English',
     type: 'in-person',
     duration: '8-16 weeks',
@@ -351,7 +351,7 @@ const courses = [
     price: 1599
   },
   {
-    id: '3',
+    id: 3,
     title: 'Online Live Classes',
     type: 'online',
     duration: 'Flexible',
@@ -360,7 +360,7 @@ const courses = [
     price: 799
   },
   {
-    id: '4',
+    id: 4,
     title: 'IELTS Preparation',
     type: 'in-person',
     duration: '12 weeks',

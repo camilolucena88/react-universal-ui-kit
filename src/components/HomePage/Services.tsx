@@ -5,7 +5,7 @@ import * as Icons from "lucide-react";
 interface Service {
   title: string;
   description: string;
-  icon: keyof typeof Icons; // Ensuring the icon is a valid Lucide icon name
+  icon: JSX.Element; // ✅ Allow JSX Elements
 }
 
 interface ServicesProps {

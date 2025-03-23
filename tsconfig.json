@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -9,18 +13,32 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "baseUrl": "./frontend",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [ "./*"]
+      "@components/*": ["components/*"],
+      "@components/ui/*": ["components/ui/*"],
+      "@components/App/*": ["components/App/*"],
+      "@components/Button/*": ["components/Button/*"],
+      "@components/GenericListing/*": ["components/GenericListing/*"],
+      "@components/Header/*": ["components/Header/*"],
+      "@components/HomePage/*": ["components/HomePage/*"],
+      "@components/JobListing/*": ["components/JobListing/*"],
+      "@components/Modal/*": ["components/Modal/*"],
+      "@components/Prices/*": ["components/Prices/*"],
+      "@store/*": ["store/*"],
+      "@services/*": ["services/*"],
+      "@helpers/*": ["helpers/*"],
+      "@types/*": ["types/*"],
+      "@pages/*": ["pages/*"],
+      "@lib/*": ["lib/*"],
+      "@/*": ["./*"]
     }
   },
-  "include": [
-    "src"
-  ],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }

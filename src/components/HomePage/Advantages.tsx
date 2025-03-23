@@ -3,7 +3,7 @@ import * as Icons from "lucide-react";
 import { ArrowRight } from "lucide-react";
 
 interface Advantage {
-  icon: string;
+  icon: JSX.Element; // ✅ Allow JSX Elements instead of strings
   title: string;
   description: string;
 }

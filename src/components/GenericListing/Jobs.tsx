@@ -1,9 +1,6 @@
 
 import React from 'react';
-import BottomNav from '@/../../../components/BottomNav';
-import JobLogo from '@/../../../components/JobLogo';
-import ThemeToggle from '@/../../../components/ThemeToggle';
-import JobCard from '@/../../../components/JobCard';
+import JobCard from "@components/JobListing/components/JobCard";
 
 const FEATURED_JOBS = [
   {
@@ -61,8 +58,6 @@ const Jobs = () => {
       {/* Header */}
       <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <JobLogo />
-          <ThemeToggle />
         </div>
       </header>
 
@@ -98,9 +93,6 @@ const Jobs = () => {
           </div>
         </section>
       </main>
-
-      {/* Bottom Navigation */}
-      <BottomNav />
     </div>
   );
 };
