@@ -39,7 +39,7 @@ if (uniqueElement) {
 // Rendering repeatable components by class or data attribute
 const repeatableElements = document.querySelectorAll('.button-component');
 repeatableElements.forEach((element) => {
-  const dataName = element.getAttribute('data-name');
+  const dataName = element.getAttribute("data-name") || "";
   ReactDOM.render(<Button dataName={dataName} />, element);
 });
 
@@ -68,7 +68,7 @@ elements.forEach((element) => {
 // Rendering repeatable components by class or data attribute
 const groupPrices = document.querySelectorAll('.group-prices-component');
 groupPrices.forEach((groupPrice) => {
-  const dataIds = groupPrice.getAttribute('data-ids').split(',');
+  const dataIds = groupPrice.getAttribute("data-ids")?.split(",") || [];
   const lang = groupPrice.getAttribute('data-lang');
   const tabTitle = groupPrice.getAttribute('data-title');
   const url = groupPrice.getAttribute('data-url') || window.location.origin || "http://localhost:8000";
@@ -162,7 +162,7 @@ if (coursesElement) {
     const duration = element.getAttribute("data-duration");
     const level = element.getAttribute("data-level");
     const description = element.getAttribute("data-description");
-    const price = parseFloat(element.getAttribute("data-price"));
+    const price = parseFloat(element.getAttribute("data-price") ?? "0");
 
     return {id, title, type, duration, level, description, price};
   });
@@ -179,10 +179,10 @@ if (coursesElement) {
 const chatbotElement = document.querySelector(".chatbot-component");
 if (chatbotElement) {
   // Extract the initial messages data from the DOM attributes (if any)
-  const initialMessages: { text: string, isBot: boolean, timestamp: Date }[] = Array.from(
+  const initialMessages: { text: string; isBot: boolean; timestamp: Date }[] = Array.from(
     chatbotElement?.querySelectorAll(".chatbot-message") || []
   ).map((element) => {
-    const text = element.getAttribute("data-text");
+    const text = element.getAttribute("data-text") || "";
     const isBot = element.getAttribute("data-is-bot") === "true";
     const timestamp = new Date(element.getAttribute("data-timestamp") || "");
 
@@ -204,16 +204,16 @@ if (chatbotElement) {
     document.querySelector(".chatbot-component")
   );
 }
-renderMultiple('.faq-component', FAQ, (el) => ({
-  title: el.getAttribute('data-title') || '',
-  description: el.getAttribute('data-description') || '',
-  faqs: Array.from(el.querySelectorAll('.faq-item')).map((faqEl) => ({
-    question: faqEl.getAttribute('data-question') || '',
-    answer: faqEl.getAttribute('data-answer') || '',
+renderMultiple('.faq-component', FAQ, (el: Element) => ({
+  title: el.getAttribute("data-title") || "",
+  description: el.getAttribute("data-description") || "",
+  faqs: Array.from(el.querySelectorAll('.faq-item')).map((faqEl: Element) => ({
+    question: faqEl.getAttribute("data-question") || "",
+    answer: faqEl.getAttribute("data-answer") || "",
   })),
 }));
 
-renderMultiple('.videos-component', Videos, (el) => ({
+renderMultiple('.videos-component', Videos, (el: Element) => ({
   title: el.getAttribute('data-title') || '',
   description: el.getAttribute('data-description') || '',
   videos: Array.from(el.querySelectorAll('.video')).map((videoEl) => ({
@@ -224,7 +224,7 @@ renderMultiple('.videos-component', Videos, (el) => ({
   })),
 }));
 
-renderMultiple('.testimonials-component', Testimonials, (el) => ({
+renderMultiple('.testimonials-component', Testimonials, (el: Element) => ({
   title: el.getAttribute('data-title') || '',
   description: el.getAttribute('data-description') || '',
   testimonials: Array.from(el.querySelectorAll('.testimonial')).map((testimonialEl) => ({
@@ -236,7 +236,7 @@ renderMultiple('.testimonials-component', Testimonials, (el) => ({
   })),
 }));
 
-renderMultiple('.destinations-component', Destinations, (el) => ({
+renderMultiple('.destinations-component', Destinations, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Campus Life Gallery',
   description: el.getAttribute('data-description') || 'Take a visual tour of our facilities and student activities',
   destinations: Array.from(el.querySelectorAll('.destination')).map((destinationEl) => ({
@@ -246,7 +246,7 @@ renderMultiple('.destinations-component', Destinations, (el) => ({
   })),
 }));
 
-renderMultiple('.features-component', Features, (el) => ({
+renderMultiple('.features-component', Features, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Campus Life Gallery',
   description: el.getAttribute('data-description') || 'Take a visual tour of our facilities and student activities',
   features: Array.from(el.querySelectorAll('.feature')).map((destinationEl) => ({
@@ -257,7 +257,7 @@ renderMultiple('.features-component', Features, (el) => ({
   })),
 }));
 
-renderMultiple('.gallery-component', Gallery, (el) => ({
+renderMultiple('.gallery-component', Gallery, (el: Element) => ({
   autoPlayInterval: Number(el.getAttribute('data-auto-play-interval')) || 5000,
   images: Array.from(el.querySelectorAll('.gallery-image')).map((imageEl) => ({
     url: imageEl.getAttribute('data-url') || '',
@@ -268,7 +268,7 @@ renderMultiple('.gallery-component', Gallery, (el) => ({
   description: el.getAttribute('data-description') || 'Take a visual tour of our facilities and student activities',
 }));
 
-renderMultiple('.services-with-icon-component', Services, (el) => ({
+renderMultiple('.services-with-icon-component', Services, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Our Services',
   description: el.getAttribute('data-description') || 'Learn English in the shortest time at the best cost',
   services: Array.from(el.querySelectorAll('.service')).map((serviceEl) => ({
@@ -278,7 +278,7 @@ renderMultiple('.services-with-icon-component', Services, (el) => ({
   })),
 }));
 
-renderMultiple('.advantages-component', Advantages, (el) => ({
+renderMultiple('.advantages-component', Advantages, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Why Choose Us?',
   description: el.getAttribute('data-description') || 'Discover the benefits of choosing our services.',
   advantages: Array.from(el.querySelectorAll('.advantage')).map((advEl) => ({
@@ -290,7 +290,7 @@ renderMultiple('.advantages-component', Advantages, (el) => ({
   })),
 }));
 
-renderMultiple('.services-component', ServicesNoIcons, (el) => ({
+renderMultiple('.services-component', ServicesNoIcons, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Our Services',
   description: el.getAttribute('data-description') || 'Learn English in the shortest time at the best cost',
   showBtn: el.getAttribute('data-show-btn') || 'Show more',
@@ -305,7 +305,7 @@ renderMultiple('.services-component', ServicesNoIcons, (el) => ({
 }));
 
 // Select and render CourseTypes components
-renderMultiple('.course-types-component', CourseTypes, (el) => ({
+renderMultiple('.course-types-component', CourseTypes, (el: Element) => ({
   title: el.getAttribute('data-title') || 'Available Courses',
   description: el.getAttribute('data-description') || 'Choose the best course for you.',
   priceLabel: el.getAttribute('data-price-label') || 'From',
@@ -314,9 +314,9 @@ renderMultiple('.course-types-component', CourseTypes, (el) => ({
   reviewsText: el.getAttribute('data-reviews-text') || 'reviews',
   courses: Array.from(el.querySelectorAll('.course')).map((courseEl) => ({
     title: courseEl.getAttribute('data-title') || '',
-    rating: parseFloat(courseEl.getAttribute('data-rating')) || 0,
-    reviews: parseInt(courseEl.getAttribute('data-reviews'), 10) || 0,
-    pricePerWeek: parseInt(courseEl.getAttribute('data-price-per-week'), 10) || 0,
+    rating: parseFloat(courseEl.getAttribute("data-rating") ?? "0"),
+    reviews: parseInt(courseEl.getAttribute("data-reviews") ?? "0", 10),
+    pricePerWeek: parseInt(courseEl.getAttribute("data-price-per-week") ?? "0", 10),
     description: courseEl.getAttribute('data-description') || '',
     features: Array.from(courseEl.querySelectorAll('.feature')).map((featureEl) => ({
       icon: featureEl.getAttribute('data-icon') || '',
@@ -325,25 +325,34 @@ renderMultiple('.course-types-component', CourseTypes, (el) => ({
   })),
 }));
 
-function renderMultiple(selector, Component, extractProps, defaultProps = {}) {
+function renderMultiple(
+  selector: string,
+  Component: React.ComponentType<any>,
+  extractProps: (el: Element) => any,
+  defaultProps: Record<string, any> = {}
+) {
   const elements = document.querySelectorAll(selector);
-  elements.forEach((element) => {
+  elements.forEach((element: Element) => {
     const props = extractProps(element);
     renderComponent(Component, element, { ...defaultProps, ...props });
   });
 }
 
-function renderComponent(Component, container, props = {}) {
+function renderComponent(
+  Component: React.ComponentType<any>,
+  container: Element,
+  props: Record<string, any> = {}
+) {
   if (container) {
     ReactDOM.render(<Component {...props} />, container);
   }
 }
 
 
-renderMultiple(".component-job-listing", JobListings, (el) => ({
+renderMultiple(".component-job-listing", JobListings, (el: Element) => ({
   apiUrl: el.getAttribute("data-api-url") || "http://localhost:5000/api",
-  itemsPerPage: parseInt(el.getAttribute("data-items-per-page")) || 12,
-  filterKeys: el.getAttribute("data-filters") ? el.getAttribute("data-filters").split(",") : ["company", "city", "company_type", "country", "department"],
+  itemsPerPage: parseInt(el.getAttribute("data-items-per-page") ?? "12", 10),
+  filterKeys: el.getAttribute("data-filters")?.split(",") ?? ["company", "city", "company_type", "country", "department"],
   enableSearch: el.getAttribute("data-enable-search") === "true",
   enablePagination: el.getAttribute("data-enable-pagination") === "true",
   enableMobileFilter: el.getAttribute("data-enable-mobile-filter") === "true",
@@ -369,7 +378,7 @@ renderMultiple(".component-job-listing", JobListings, (el) => ({
   }
 }));
 
-renderMultiple(".footer-component", Footer, (el) => {
+renderMultiple(".footer-component", Footer, (el: Element) => {
   return {
     title: el.getAttribute("data-title") || "Footer",
     description: el.getAttribute("data-description") || "This is the footer component",
@@ -382,7 +391,7 @@ renderMultiple(".footer-component", Footer, (el) => {
   }
 });
 
-renderMultiple(".navbar-component", Navbar, (el) => {
+renderMultiple(".navbar-component", Navbar, (el: Element) => {
   return {
     logo: el.getAttribute("data-logo") || "",
     buttonText: el.getAttribute("data-button-text") || "Post a Job",
@@ -394,17 +403,17 @@ renderMultiple(".navbar-component", Navbar, (el) => {
   }
 });
 
-renderMultiple(".banner-component", Banner, (el) => ({
+renderMultiple(".banner-component", Banner, (el: Element) => ({
   position: el.getAttribute("data-position") as "top" | "bottom" | "sidebar",
   url: el.getAttribute("data-url") || "",
   link: el.getAttribute("data-link") || "#",
   alt: el.getAttribute("data-alt") || "Banner",
 }));
 
-renderMultiple(".listing-component", Listing, (el) => ({
+renderMultiple(".listing-component", Listing, (el: Element) => ({
   apiUrl: el.getAttribute("data-api-url") || "/api/jobs",
   itemsPerPage: parseInt(el.getAttribute("data-items-per-page") || "10"),
-  filterKeys: (el.getAttribute("data-filters") || "company,city,department").split(","),
+  filterKeys: el.getAttribute("data-filters")?.split(",") ?? ["company","city","company_type","country","department",],
   enableSearch: el.getAttribute("data-enable-search") === "false",
   enablePagination: el.getAttribute("data-enable-pagination") === "false",
   enableMobileFilter: el.getAttribute("data-enable-mobile-filter") === "false",
