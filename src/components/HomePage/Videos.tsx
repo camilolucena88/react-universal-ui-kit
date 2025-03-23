@@ -1,9 +1,22 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 
+interface Video {
+  title: string;
+  url?: string;
+  thumbnail?: string;
+  description?: string;
+  duration: string
+}
+
+interface VideosProps {
+  videos: Video[];
+  title: string;
+  description: string;
+}
 
 
-export default function Videos({videos, title, description}) {
+export default function Videos({ videos, title, description }: VideosProps) {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

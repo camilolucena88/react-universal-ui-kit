@@ -2,7 +2,19 @@ import React from "react";
 import * as Icons from "lucide-react";
 import { ArrowRight } from "lucide-react";
 
-export default function Advantages({ advantages, title, description }) {
+interface Advantage {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface AdvantagesProps {
+  advantages: Advantage[];
+  title: string;
+  description: string;
+}
+
+export default function Advantages({ advantages, title, description }: AdvantagesProps) {
   return (
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

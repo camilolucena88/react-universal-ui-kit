@@ -2,16 +2,17 @@
 
 import type React from "react"
 import { MapPin, Clock, BriefcaseIcon, Bookmark, BookmarkIcon } from 'lucide-react';
+import {Job} from "@components/JobListing/types/Job";
 
 interface JobCardProps {
   job: Job
   onSaveJob: (job: Job) => void
   onViewJob: (job: Job) => void
-  isSaved: boolean
+  isSaved?: boolean;
   layout?: "grid" | "list"
 }
 
-const JobCard: React.FC<JobCardProps> = ({ job, onSaveJob, onViewJob, isSaved, layout = "grid" }) => {
+const JobCard: React.FC<JobCardProps> = ({ job, onSaveJob = () => {}, onViewJob = () => {}, isSaved = false, layout = "grid" }) => {
   // Ensure job is a valid object
   if (!job || typeof job !== "object") {
     console.error("❌ Invalid job data:", job)

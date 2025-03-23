@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import {Job} from "@components/JobListing/types/Job";
 
 interface LastVisitedJobsProps {
   jobs: Job[]

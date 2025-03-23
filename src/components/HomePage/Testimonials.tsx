@@ -1,9 +1,21 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
+interface Testimonial {
+  name: string;
+  from: string;
+  image: string;
+  text: string;
+  rating: number;
+}
 
+interface TestimonialsProps {
+  testimonials: Testimonial[];
+  title: string;
+  description: string;
+}
 
-export default function Testimonials({testimonials, title, description}) {
+export default function Testimonials({testimonials, title, description}: TestimonialsProps) {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

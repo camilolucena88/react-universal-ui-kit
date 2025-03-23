@@ -1,11 +1,24 @@
 import React from 'react';
+
 import * as Icons from "lucide-react";
+
+interface Service {
+  title: string;
+  description: string;
+  icon: keyof typeof Icons; // Ensuring the icon is a valid Lucide icon name
+}
+
+interface ServicesProps {
+  title: string;
+  description: string;
+  services: Service[];
+}
 
 export default function Services({
         title,
         description,
         services
-    }) {
+    }: ServicesProps) {
     return (
         <section id="services" className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

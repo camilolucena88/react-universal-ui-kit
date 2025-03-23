@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 
-export default function ServicesNoIcons({services, title, description, showBtn = "Show", hideBtn = "Hide", featuresBtn = "Features"}) {
+interface ServiceFeature {
+  text: string;
+}
+
+interface Service {
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  features: string[]; // Array of feature strings
+}
+
+interface ServicesNoIconsProps {
+  services: Service[];
+  title: string;
+  description: string;
+  showBtn?: string;
+  hideBtn?: string;
+  featuresBtn?: string;
+}
+
+export default function ServicesNoIcons({services, title, description, showBtn = "Show", hideBtn = "Hide", featuresBtn = "Features"}: ServicesNoIconsProps) {
   const [expandedService, setExpandedService] = useState<number | null>(null);
 
   const toggleService = (index: number) => {

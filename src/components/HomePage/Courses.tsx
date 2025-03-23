@@ -2,7 +2,29 @@ import React from 'react';
 import { Clock, Users, Signal, ShoppingCart } from 'lucide-react';
 import { useCart } from './context/CartContext';
 
-export default function Courses({courses, title, description}) {
+interface Course {
+  id: number;
+  title: string;
+  rating: number;
+  reviews: number;
+  price?: number;
+  level?: string;
+  type?: string;
+  pricePerWeek: number;
+  description: string;
+  duration: number
+  features: { icon: string; text: string }[];
+  ctaLink?: string;
+  ctaText?: string;
+}
+
+interface CourseTypesProps {
+  courses: Course[];
+  title: string;
+  description: string;
+}
+
+export default function Courses({courses, title, description}:CourseTypesProps) {
   const { addItem } = useCart();
 
   return (
